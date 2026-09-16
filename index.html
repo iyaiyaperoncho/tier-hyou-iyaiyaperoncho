@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="ja"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;みんなのTier表 ♡ Online&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="style.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="header-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;🎀 みんなのTier表 🎀&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;small&gt;みんなでワイワイ作って一斉公開しちゃお✨&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="status-badge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>状態: &lt;b id="status"&gt;未接続&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- スタート画面 --&gt;</p>
+<p class="p1">&lt;section id="start" class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;👑 ルームを作る&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="hostBtn" class="btn btn-primary"&gt;主催者として開始&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="divider"&gt;&lt;span&gt;OR&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;💌 参加する&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="hostIdInput" placeholder="主催者のルームIDを入力"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="nameInput" placeholder="あなたの名前（ニックネーム）"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="joinBtn" class="btn btn-secondary"&gt;参加する！&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- 主催者専用コントロールパネル --&gt;</p>
+<p class="p1">&lt;section id="hostPanel" class="panel hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="host-info-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="room-id-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ルームID: &lt;code id="hostId"&gt;&lt;/code&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="copyBtn" class="btn-sm"&gt;コピー&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="itemInput" placeholder="候補を追加（例: ショートケーキ、タピオカ）"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="addItemBtn" class="btn btn-primary"&gt;＋ 候補追加&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="itemsList" class="items-list"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="button-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="revealBtn" class="btn btn-accent"&gt;✨ 全員公開！&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="hideBtn" class="btn btn-subtle"&gt;🙈 再び非公開&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="resetBtn" class="btn btn-danger"&gt;🗑 全員リセット&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- マイTier表操作パネル（参加者・主催者共通） --&gt;</p>
+<p class="p1">&lt;section id="playerPanel" class="panel hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="player-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 id="playerName"&gt;マイTier表&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="localItemInput" placeholder="自分だけの候補を追加"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="localAddBtn" class="btn btn-secondary"&gt;自分用追加&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="myBoard"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="hint-text"&gt;💡 カードをドラッグ＆ドロップで配置移動 / クリックで削除できるよ！&lt;/p&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- 全体公開・配信用表示パネル（3列並び） --&gt;</p>
+<p class="p1">&lt;section id="displayPanel" class="panel wide-panel hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="panel-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;🎉 みんなのTier結果一覧&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="badge" id="revealStatus"&gt;非公開中&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="allBoards" class="grid-three"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- 外部配信用のみで開く場合の設定パネル --&gt;</p>
+<p class="p1">&lt;section id="spectatorConnectPanel" class="panel hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;📺 配信用画面として接続&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="displayHostInput" placeholder="主催者のルームID"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="displayConnectBtn" class="btn btn-primary"&gt;表示に接続&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script src="app.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
